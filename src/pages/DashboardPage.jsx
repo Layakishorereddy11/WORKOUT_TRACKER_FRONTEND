@@ -5,6 +5,7 @@ import userService from '../services/userService';
 import WorkoutListItem from '../components/WorkoutListItem';
 import WorkoutCalendar from '../components/WorkoutCalendar';
 import StatsWidget from '../components/StatsWidget'; // Import the new stats widget
+import TemplateWidget from '../components/TemplateWidget'; // Import the new template widget
 import { parseLocalDate } from '../utils/date';
 import { exerciseData } from '../data/exercises'; // Import exercise data for mapping
 import '../styles/DashboardPage.css';
@@ -115,6 +116,7 @@ const DashboardPage = () => {
       <div className="dashboard-main-content">
         <aside className="dashboard-sidebar-left">
           <StatsWidget stats={stats} />
+          <TemplateWidget />
         </aside>
         <div className="workout-list-container">
           {workouts.length > 0 ? (

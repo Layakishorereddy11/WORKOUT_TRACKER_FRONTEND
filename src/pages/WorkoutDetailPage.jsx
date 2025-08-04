@@ -12,6 +12,28 @@ const WorkoutDetailPage = () => {
   const { workoutId } = useParams();
   const { user } = useAuth();
 
+  const handleSaveAsTemplate = async () => {
+    if (!workout || !workout.notes) {
+      alert("Cannot save a template from a workout without a name.");
+      return;
+    }
+
+    const templateName = workout.notes;
+    const templateData = {
+      name: templateName,
+      // Remove exercise IDs to create a fresh template
+      exercises: workout.exercises.map(({ id, ...rest }) => rest),
+    };
+
+    try {
+      await userService.createTemplate(user.user.id, templateData);
+      alert(`Template "${templateName}" saved successfully!`);
+    } catch (err) {
+      console.error("Failed to save template", err);
+      alert("Error: Could not save template. A template with this name might already exist.");
+    }
+  };
+
   useEffect(() => {
     const fetchWorkout = async () => {
       try {
@@ -52,7 +74,10 @@ const WorkoutDetailPage = () => {
   return (
     <div className="detail-container">
       <div className="detail-card">
-        <Link to="/" className="back-link">← Back to Dashboard</Link>
+        <div className="detail-card-actions">
+          <Link to="/" className="back-link">← Back to Dashboard</Link>
+          <button onClick={handleSaveAsTemplate} className="btn-secondary">Save as Template</button>
+        </div>
         <div className="detail-header">
           <h1>{workout.notes}</h1>
           <p>{workoutDate}</p>

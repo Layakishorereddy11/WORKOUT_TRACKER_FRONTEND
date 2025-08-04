@@ -37,6 +37,19 @@ const deleteWorkout = (userId, workoutId) => {
   return api.delete(`/users/${userId}/workouts/${workoutId}`);
 };
 
+// --- Templates ---
+const getTemplates = (userId) => {
+  return api.get(`/users/${userId}/templates`);
+};
+
+const createTemplate = (userId, templateData) => {
+  return api.post(`/users/${userId}/templates`, templateData);
+};
+
+const deleteTemplate = (userId, templateId) => {
+  return api.delete(`/users/${userId}/templates/${templateId}`);
+};
+
 
 const userService = {
   register,
@@ -46,6 +59,9 @@ const userService = {
   getWorkoutById,
   updateWorkout,
   deleteWorkout,
+  getTemplates,
+  createTemplate,
+  deleteTemplate,
 };
 
 export default userService; 

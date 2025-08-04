@@ -15,10 +15,17 @@
   position: relative;
 }
 
-.back-link {
+.detail-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
   top: 25px;
   left: 25px;
+  right: 25px;
+}
+
+.back-link {
   color: #a78bfa;
   text-decoration: none;
   font-weight: 500;
@@ -31,6 +38,7 @@
 
 .detail-header {
   text-align: center;
+  margin-top: 30px; /* Add space for the actions up top */
   margin-bottom: 40px;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--border-color);
@@ -38,6 +46,7 @@
 
 .detail-header h1 {
   margin: 0 0 10px 0;
+  color: var(--text-primary);
 }
 
 .detail-header p {
@@ -48,6 +57,7 @@
 
 .exercises-list h2 {
   font-size: 1.5rem;
+  color: var(--text-primary);
   margin-bottom: 20px;
   padding-bottom: 15px;
   border-bottom: 1px solid var(--border-color);
@@ -71,4 +81,23 @@
 .exercise-item .exercise-stats {
   font-size: 1.1rem;
   color: var(--text-secondary);
+}
+
+/* Ensure the 'Save as Template' button is styled correctly */
+.detail-card .btn-secondary {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.detail-card .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
 } 

@@ -2,7 +2,7 @@
   width: 100%;
   background-color: rgba(17, 24, 39, 0.8);
   backdrop-filter: blur(10px);
-  padding: 20px 40px;
+  padding: 10px 40px; /* Adjust padding for logo */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,11 +22,21 @@
 .header-link {
   text-decoration: none;
   color: inherit;
+  display: flex; /* This is key for alignment */
+  align-items: center;
+  gap: 15px; /* Creates space between logo and text */
 }
 
-.sidebar-header h2 {
+.logo-image {
+  height: 45px;
+  width: 45px; /* Make width and height equal for a perfect circle */
+  border-radius: 50%; /* This creates the circular shape */
+  object-fit: cover; /* This prevents the image from being squashed */
+}
+
+.header-link h2 { /* Targeting the h2 within the link */
   margin: 0;
-  font-size: 24px;
+  font-size: 1.5rem; /* Slightly smaller to balance with logo */
 }
 
 .sidebar-menu {

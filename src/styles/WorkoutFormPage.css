@@ -14,9 +14,34 @@
   border: 1px solid var(--border-color);
 }
 
-.form-title {
-  text-align: center;
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-title {
+  margin: 0;
+}
+
+.btn-load-template {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-load-template:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
 }
 
 .form-group {
@@ -181,5 +206,10 @@
 
 .error-message {
   color: var(--danger-color);
+  font-weight: bold;
+}
+
+.success-message {
+  color: #22c55e;
   font-weight: bold;
 } 

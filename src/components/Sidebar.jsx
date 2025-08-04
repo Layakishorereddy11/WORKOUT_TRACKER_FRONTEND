@@ -16,6 +16,7 @@ const Sidebar = () => {
     <nav className="sidebar">
       <div className="sidebar-left">
         <NavLink to="/" className="header-link">
+          <img src="/logo.png" alt="Workout Tracker Logo" className="logo-image" />
           <h2>Workout Tracker</h2>
         </NavLink>
       </div>

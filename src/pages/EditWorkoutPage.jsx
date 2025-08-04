@@ -10,6 +10,7 @@ const EditWorkoutPage = () => {
   const [workoutDate, setWorkoutDate] = useState('');
   const [addedExercises, setAddedExercises] = useState([]);
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // For success messages
   const [loading, setLoading] = useState(true);
   
   const [currentMuscle, setCurrentMuscle] = useState('');
@@ -44,6 +45,30 @@ const EditWorkoutPage = () => {
       fetchWorkoutData();
     }
   }, [user, workoutId]);
+
+  const handleSaveAsTemplate = async () => {
+    if (!workoutNotes || addedExercises.length === 0) {
+      setError('A template must have a name and at least one exercise.');
+      return;
+    }
+    setError('');
+    setSuccessMessage('');
+
+    const templateData = {
+      name: workoutNotes,
+      // Strip exercise IDs when creating a template from an existing workout
+      exercises: addedExercises.map(({ id, ...rest }) => rest),
+    };
+
+    try {
+      await userService.createTemplate(user.user.id, templateData);
+      setSuccessMessage(`Template "${workoutNotes}" saved!`);
+      setTimeout(() => setSuccessMessage(''), 3000);
+    } catch (err) {
+      setError('Failed to save template. A template with this name might already exist.');
+      console.error(err);
+    }
+  };
 
   const handleAddExercise = () => {
     if (!currentExercise.exerciseName || !currentExercise.sets || !currentExercise.reps) {
@@ -176,6 +201,7 @@ const EditWorkoutPage = () => {
         {/* Save & Error */}
         <div className="form-footer">
           {error && <p className="error-message">{error}</p>}
+          {successMessage && <p className="success-message">{successMessage}</p>}
           <div className="form-buttons">
             <button
               type="button"
@@ -183,6 +209,14 @@ const EditWorkoutPage = () => {
               onClick={() => navigate(-1)}
             >
               Cancel
+            </button>
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={handleSaveAsTemplate}
+              disabled={!workoutNotes || addedExercises.length === 0}
+            >
+              Save as Template
             </button>
             <button
               onClick={handleUpdateWorkout}
