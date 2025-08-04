@@ -1,0 +1,98 @@
+.stats-widget-container {
+  background: var(--card-background);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  position: sticky;
+  top: 120px; /* Same as calendar for symmetry */
+}
+
+.widget-title {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.no-stats-text {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.stat-card {
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.total-workouts-card {
+  background: var(--primary-gradient);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.focus-card {
+  background-color: rgba(17, 24, 39, 0.7);
+  display: flex;
+  justify-content: space-around;
+}
+
+.focus-card .stat-value.small {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  margin-top: 5px;
+}
+
+.muscle-breakdown .breakdown-title {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+.muscle-breakdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.muscle-breakdown li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.muscle-breakdown li:last-child {
+  border-bottom: none;
+}
+
+.count-badge {
+  background-color: #374151;
+  color: var(--text-primary);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+} 

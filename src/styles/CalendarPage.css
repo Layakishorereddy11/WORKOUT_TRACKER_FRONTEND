@@ -1,0 +1,128 @@
+.page-container {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.calendar-wrapper {
+  background: var(--card-background);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  padding: 30px;
+}
+
+/* --- React Calendar Overrides --- */
+.react-calendar {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--font-family);
+}
+
+/* Navigation */
+.react-calendar__navigation {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 44px;
+}
+.react-calendar__navigation button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.react-calendar__navigation__label {
+  flex-grow: 1 !important;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: none !important;
+}
+.react-calendar__navigation__label:hover {
+  background: none !important;
+}
+
+/* Weekdays */
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+/* Tiles (Days) */
+.react-calendar__tile {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.react-calendar__tile abbr {
+  padding: 10px;
+}
+
+.react-calendar__tile:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Today's Date */
+.react-calendar__tile--now {
+  background: rgba(139, 92, 246, 0.1);
+}
+.react-calendar__tile--now:hover {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+/* Other months */
+.react-calendar__tile--neighboringMonth {
+  color: #6b7280; /* Gray-500 */
+}
+
+/* Workout Dot */
+.workout-dot {
+  height: 8px;
+  width: 8px;
+  background-color: #8b5cf6;
+  border-radius: 50%;
+  margin-top: 8px;
+  box-shadow: 0 0 10px #8b5cf6, 0 0 15px #8b5cf6;
+} 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../styles/Sidebar.css';
 
@@ -14,10 +14,10 @@ const Sidebar = () => {
 
   return (
     <nav className="sidebar">
-      <div className="sidebar-header">
-        <Link to="/" className="header-link">
-          <h2>Home</h2>
-        </Link>
+      <div className="sidebar-left">
+        <NavLink to="/" className="header-link">
+          <h2>Workout Tracker</h2>
+        </NavLink>
       </div>
       <ul className="sidebar-menu">
         {auth.user ? (
@@ -27,10 +27,10 @@ const Sidebar = () => {
         ) : (
           <>
             <li>
-              <Link to="/login" className="sidebar-button">Login</Link>
+              <NavLink to="/login" className="sidebar-button">Login</NavLink>
             </li>
             <li>
-              <Link to="/register" className="sidebar-button">Register</Link>
+              <NavLink to="/register" className="sidebar-button">Register</NavLink>
             </li>
           </>
         )}
