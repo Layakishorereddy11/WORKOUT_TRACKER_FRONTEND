@@ -50,6 +50,23 @@ const deleteTemplate = (userId, templateId) => {
   return api.delete(`/users/${userId}/templates/${templateId}`);
 };
 
+// --- Account Recovery ---
+const requestUsernameOTP = (email) => {
+  return api.post('/account-recovery/forgot-username', { email });
+};
+
+const verifyUsernameOTP = (email, otp) => {
+  return api.post('/account-recovery/verify-otp-username', { email, otp });
+};
+
+const requestPasswordOTP = (email) => {
+  return api.post('/account-recovery/forgot-password', { email });
+};
+
+const resetPassword = (email, otp, newPassword) => {
+  return api.post('/account-recovery/reset-password', { email, otp, newPassword });
+};
+
 
 const userService = {
   register,
@@ -62,6 +79,10 @@ const userService = {
   getTemplates,
   createTemplate,
   deleteTemplate,
+  requestUsernameOTP,
+  verifyUsernameOTP,
+  requestPasswordOTP,
+  resetPassword,
 };
 
 export default userService; 

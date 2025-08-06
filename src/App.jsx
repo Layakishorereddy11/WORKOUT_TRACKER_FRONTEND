@@ -9,6 +9,7 @@ import DashboardPage from './pages/DashboardPage';
 import WorkoutFormPage from './pages/WorkoutFormPage';
 import WorkoutDetailPage from './pages/WorkoutDetailPage'; // Add this import
 import EditWorkoutPage from './pages/EditWorkoutPage'; // Add this import
+import AccountRecoveryPage from './pages/AccountRecoveryPage'; // Import new page
 // No longer need to import CalendarPage
 import './styles/App.css';
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/account-recovery" element={<AccountRecoveryPage />} />
 
           {/* Protected Routes */}
           <Route path="/" element={<ProtectedRoute />}>

@@ -1,0 +1,122 @@
+.recovery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 40px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.recovery-form {
+  background: var(--card-background);
+  backdrop-filter: blur(20px);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.recovery-form h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.recovery-form .subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.recovery-form input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  background-color: rgba(17, 24, 39, 0.5);
+  color: var(--text-primary);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.recovery-form input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.3);
+}
+
+.recovery-form button,
+.btn-back {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.recovery-form button:hover {
+  background: var(--primary-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+.recovery-form button:disabled {
+  background: #374151;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+.recovered-username {
+  background-color: rgba(17, 24, 39, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed var(--border-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c4b5fd;
+  margin-bottom: 30px;
+}
+
+.back-link-bottom {
+  display: block;
+  margin-top: 15px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.back-link-bottom:hover {
+  color: var(--text-primary);
+}
+
+.message {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.message.success-message {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+}
+.message.error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+} 

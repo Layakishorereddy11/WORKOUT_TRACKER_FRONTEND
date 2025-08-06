@@ -25,13 +25,30 @@ api.interceptors.response.use(
     return response;
   },
   (error) => {
+    const originalRequest = error.config;
+
+    // This is the crucial check. We only want to auto-logout if the error is 401 (Unauthorized)
+    // AND it did NOT come from an authentication-related page.
     if (error.response && error.response.status === 401) {
-      // Automatic logout on 401
-      localStorage.removeItem('user');
-      // You might want to dispatch a logout action here or use a different way
-      // to update the UI. For simplicity, we'll just reload to the login page.
-      window.location.href = '/login';
+      const publicUrls = [
+        '/users/login',
+        '/users/register',
+        '/account-recovery/forgot-username',
+        '/account-recovery/verify-otp-username',
+        '/account-recovery/forgot-password',
+        '/account-recovery/reset-password',
+      ];
+
+      // If the URL is NOT one of our public auth URLs, it means a token is expired/invalid on a protected route.
+      // In this case, we log the user out.
+      if (!publicUrls.includes(originalRequest.url)) {
+        localStorage.removeItem('user');
+        window.location.href = '/login';
+        return Promise.reject(new Error('Session expired, please log in again.'));
+      }
     }
+    
+    // For login failures and other errors, we let the component's `catch` block handle it.
     return Promise.reject(error);
   }
 );

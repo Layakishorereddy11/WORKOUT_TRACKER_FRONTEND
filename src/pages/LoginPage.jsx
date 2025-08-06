@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import userService from '../services/userService';
 import '../styles/LoginPage.css';
@@ -53,7 +53,7 @@ const LoginPage = () => {
         />
         <button type="submit">Login</button>
         {message && <p className="message error-message">{message}</p>}
-        <a href="#" className="forgot-link">Forgot password or username?</a>
+        <Link to="/account-recovery" className="forgot-link">Forgot password or username?</Link>
       </form>
     </div>
   );
