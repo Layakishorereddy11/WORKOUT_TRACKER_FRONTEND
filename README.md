@@ -2,7 +2,7 @@
   <img src="public/logo.png" alt="Workout Tracker Logo" width="150px" />
   <h1>Workout Tracker</h1>
   <p>A modern, feature-rich web application designed to help you track your workouts, monitor your progress, and stay motivated on your fitness journey.</p>
-  <p>🚀 Live Demo: <a href="https://track-gymworkouts.netlify.app" target="_blank">track-gymworkouts.netlify.app</a></p>
+  <p>🚀 Live Demo: <a href="https://track-gymworkouts.netlify.app" target="_blank">https://track-gymworkouts.netlify.app/</a></p>
 </div>
 
 ---
