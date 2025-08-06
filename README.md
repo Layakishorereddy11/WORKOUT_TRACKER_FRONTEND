@@ -13,8 +13,8 @@
   <img src="public/screenshots/homepage.png" alt="Homepage Demo" width="80%" />
   <img src="public/screenshots/dashboard.png" alt="Dashboard Demo" width="80%" />
   <img src="public/screenshots/workout-form.png" alt="Workout Form Demo" width="80%" />
-  <img src="public/screenshots/stats-templates.png" alt="Stats & Templates Widget" width="80%" />
-  <img src="public/screenshots/workout-detail.png" alt="Workout Detail Demo" width="80%" />
+  <img src="public/screenshots/stats-templates.png" alt="Stats & Templates Widget" height="60%" width="60%" />
+  <img src="public/screenshots/view-workout.png" alt="Workout Detail Demo"  height="60%" width="60%" />
 </div>
 
 ---
