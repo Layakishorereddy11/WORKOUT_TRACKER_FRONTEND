@@ -6,19 +6,13 @@ import ProtectedRoute from './components/ProtectedRoute';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
+import HomePage from './pages/HomePage';
 import WorkoutFormPage from './pages/WorkoutFormPage';
 import WorkoutDetailPage from './pages/WorkoutDetailPage'; // Add this import
 import EditWorkoutPage from './pages/EditWorkoutPage'; // Add this import
 import AccountRecoveryPage from './pages/AccountRecoveryPage'; // Import new page
 // No longer need to import CalendarPage
 import './styles/App.css';
-
-const HomePage = () => (
-  <main className="main-content">
-    <h1>Workout Tracker</h1>
-    <p>Welcome! Please log in or register to continue.</p>
-  </main>
-);
 
 function App() {
   return (

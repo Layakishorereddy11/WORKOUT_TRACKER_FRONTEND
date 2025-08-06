@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../styles/Sidebar.css';
 
 const Sidebar = () => {
   const auth = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
     auth.logout();
@@ -26,14 +27,17 @@ const Sidebar = () => {
             <button onClick={handleLogout} className="sidebar-button">Logout</button>
           </li>
         ) : (
-          <>
-            <li>
-              <NavLink to="/login" className="sidebar-button">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/register" className="sidebar-button">Register</NavLink>
-            </li>
-          </>
+          // Hide on the home landing page to avoid duplicates
+          location.pathname !== '/home' && (
+            <>
+              <li>
+                <NavLink to="/login" className="sidebar-button">Login</NavLink>
+              </li>
+              <li>
+                <NavLink to="/register" className="sidebar-button">Register</NavLink>
+              </li>
+            </>
+          )
         )}
       </ul>
     </nav>
