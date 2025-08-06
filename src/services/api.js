@@ -32,12 +32,12 @@ api.interceptors.response.use(
     // AND it did NOT come from an authentication-related page.
     if (error.response && error.response.status === 401) {
       const publicUrls = [
-        '/api/users/login',
-        '/api/users/register',
-        '/api/account-recovery/forgot-username',
-        '/api/account-recovery/verify-otp-username',
-        '/api/account-recovery/forgot-password',
-        '/api/account-recovery/reset-password',
+        '/users/login',
+        '/users/register',
+        '/account-recovery/forgot-username',
+        '/account-recovery/verify-otp-username',
+        '/account-recovery/forgot-password',
+        '/account-recovery/reset-password',
       ];
 
       // If the URL is NOT one of our public auth URLs, it means a token is expired/invalid on a protected route.
